@@ -1,4 +1,4 @@
-package com.dangerlibrary.citrine.api;
+package com.dangerlibrary.citrine.api.model;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.StringUtils;
@@ -6,7 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-import static com.dangerlibrary.citrine.api.Constants.DISPLAY_CONTEXT;
+import static com.dangerlibrary.citrine.api.util.Constants.CALC_CONTEXT;
+import static com.dangerlibrary.citrine.api.util.Constants.DISPLAY_CONTEXT;
 
 public class SIUnit {
     private final String unitName;
@@ -31,9 +32,9 @@ public class SIUnit {
 
     @Override
     public String toString() {
-        return "SIUnit{" +
-                "unitName='" + unitName + '\'' +
-                ", multiplicationFactor=" + getMultiplicationFactor() +
+        return "{" +
+                "\"unit_name\":\"" + unitName + '\"' +
+                ", \"multiplication_factor\":\"" + getMultiplicationFactor() + "\"" +
                 '}';
     }
 
@@ -65,7 +66,7 @@ public class SIUnit {
         }
 
         public Builder setMultiplicationFactor(String factor) {
-            this.multiplicationFactor = new BigDecimal(factor);
+            this.multiplicationFactor = new BigDecimal(factor, CALC_CONTEXT);
             return this;
         }
 

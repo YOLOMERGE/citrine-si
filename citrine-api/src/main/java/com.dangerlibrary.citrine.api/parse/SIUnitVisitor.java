@@ -1,11 +1,12 @@
-package com.dangerlibrary.citrine.api;
+package com.dangerlibrary.citrine.api.parse;
 
 import com.dangerlibrary.citrine.UnitBaseVisitor;
 import com.dangerlibrary.citrine.UnitParser;
+import com.dangerlibrary.citrine.api.model.SIUnit;
 
-import static com.dangerlibrary.citrine.api.Constants.UNIT_MAP;
-import static com.dangerlibrary.citrine.api.Functions.divide;
-import static com.dangerlibrary.citrine.api.Functions.multiply;
+import static com.dangerlibrary.citrine.api.util.Constants.UNIT_MAP;
+import static com.dangerlibrary.citrine.api.util.Functions.divide;
+import static com.dangerlibrary.citrine.api.util.Functions.multiply;
 
 public class SIUnitVisitor extends UnitBaseVisitor<SIUnit> {
 

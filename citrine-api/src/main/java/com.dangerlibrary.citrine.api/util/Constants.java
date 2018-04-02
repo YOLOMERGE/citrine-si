@@ -1,5 +1,6 @@
-package com.dangerlibrary.citrine.api;
+package com.dangerlibrary.citrine.api.util;
 
+import com.dangerlibrary.citrine.api.model.SIUnit;
 import com.google.common.collect.ImmutableMap;
 
 import java.math.BigDecimal;

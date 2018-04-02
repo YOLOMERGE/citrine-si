@@ -1,5 +1,7 @@
 package com.dangerlibrary.citrine.api;
 
+import com.dangerlibrary.citrine.api.model.SIUnit;
+import com.dangerlibrary.citrine.api.parse.SIUnitVisitor;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -8,7 +10,7 @@ import com.dangerlibrary.citrine.UnitLexer;
 import com.dangerlibrary.citrine.UnitParser;
 
 
-import static com.dangerlibrary.citrine.api.Constants.UNIT_MAP;
+import static com.dangerlibrary.citrine.api.util.Constants.UNIT_MAP;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
