@@ -7,7 +7,7 @@ import static com.dangerlibrary.citrine.api.Constants.UNIT_MAP;
 import static com.dangerlibrary.citrine.api.Functions.divide;
 import static com.dangerlibrary.citrine.api.Functions.multiply;
 
-public class UnitBaseVisitorImpl extends UnitBaseVisitor<SIUnit> {
+public class SIUnitVisitor extends UnitBaseVisitor<SIUnit> {
 
     @Override
     public SIUnit visitUnit(UnitParser.UnitContext ctx) {

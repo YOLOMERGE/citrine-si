@@ -59,7 +59,7 @@ public class ParserTest {
         UnitLexer lexer = new UnitLexer(stream);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         UnitParser parser = new UnitParser(tokens);
-        SIUnit unit = new UnitBaseVisitorImpl().visitInput(parser.input());
+        SIUnit unit = new SIUnitVisitor().visitInput(parser.input());
         System.out.println("Input: " + input);
         System.out.println("Result: " + unit.toString());
         return unit;

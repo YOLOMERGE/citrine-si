@@ -7,14 +7,14 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 
 public class Constants {
-    // Inherent trade-off here for calcPrecision:
+    // Inherent trade-off here for the calc MathContext precision:
     //     1. A larger number will not perform as well, and opens us up to DOS attacks
     //     2. A smaller number may truncate multiplication factors in complicated unit expressions
     // For now, just double the display precision.
     public static final MathContext CALC_CONTEXT = new MathContext(28, RoundingMode.HALF_UP);
     public static final MathContext DISPLAY_CONTEXT = new MathContext(14, RoundingMode.HALF_UP);
 
-    // Java's Math.PI is a double, and is only accurate to about 15 sig figs.
+    // Java's Math.PI is a double, and is only accurate to about 15 sig figs. Here's 28 digits of pi.
     public static final BigDecimal PI = new BigDecimal("3.141592653589793238462643383");
     public static final BigDecimal DEGREE = PI.divide(new BigDecimal(180), CALC_CONTEXT);
     public static final BigDecimal MINUTE = PI.divide(new BigDecimal(10800), CALC_CONTEXT);
