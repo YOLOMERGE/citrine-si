@@ -1,11 +1,11 @@
-package com.dangerlibrary.citrine.api.util;
+package com.dangerlibrary.citrine.lib.util;
 
-import com.dangerlibrary.citrine.api.model.SIUnit;
+import com.dangerlibrary.citrine.lib.model.SIUnit;
 import com.google.common.base.Preconditions;
 
 import java.math.BigDecimal;
 
-import static com.dangerlibrary.citrine.api.util.Constants.CALC_CONTEXT;
+import static com.dangerlibrary.citrine.lib.util.Constants.CALC_CONTEXT;
 
 public class Functions {
     public static SIUnit multiply(SIUnit left, SIUnit right) {

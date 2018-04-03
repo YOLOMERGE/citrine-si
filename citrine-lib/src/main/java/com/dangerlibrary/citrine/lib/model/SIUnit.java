@@ -1,4 +1,4 @@
-package com.dangerlibrary.citrine.api.model;
+package com.dangerlibrary.citrine.lib.model;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.StringUtils;
@@ -6,8 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-import static com.dangerlibrary.citrine.api.util.Constants.CALC_CONTEXT;
-import static com.dangerlibrary.citrine.api.util.Constants.DISPLAY_CONTEXT;
+import static com.dangerlibrary.citrine.lib.util.Constants.CALC_CONTEXT;
+import static com.dangerlibrary.citrine.lib.util.Constants.DISPLAY_CONTEXT;
 
 public class SIUnit {
     private final String unitName;

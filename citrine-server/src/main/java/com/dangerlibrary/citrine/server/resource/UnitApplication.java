@@ -1,4 +1,4 @@
-package com.dangerlibrary.citrine.api.resource;
+package com.dangerlibrary.citrine.lib.resource;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;

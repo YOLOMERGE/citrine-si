@@ -1,9 +1,9 @@
-package com.dangerlibrary.citrine.api.resource;
+package com.dangerlibrary.citrine.lib.resource;
 
 
 import com.dangerlibrary.citrine.UnitLexer;
 import com.dangerlibrary.citrine.UnitParser;
-import com.dangerlibrary.citrine.api.parse.SIUnitVisitor;
+import com.dangerlibrary.citrine.lib.parse.SIUnitVisitor;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.CommonTokenStream;

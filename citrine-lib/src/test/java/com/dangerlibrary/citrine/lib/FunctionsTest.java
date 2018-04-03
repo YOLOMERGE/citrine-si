@@ -1,12 +1,12 @@
-package com.dangerlibrary.citrine.api;
+package com.dangerlibrary.citrine.lib;
 
-import com.dangerlibrary.citrine.api.model.SIUnit;
+import com.dangerlibrary.citrine.lib.model.SIUnit;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static com.dangerlibrary.citrine.api.util.Functions.divide;
-import static com.dangerlibrary.citrine.api.util.Functions.multiply;
+import static com.dangerlibrary.citrine.lib.util.Functions.divide;
+import static com.dangerlibrary.citrine.lib.util.Functions.multiply;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
