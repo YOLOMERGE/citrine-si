@@ -32,6 +32,13 @@ public class SIUnit {
 
     @Override
     public String toString() {
+        return "SIUnit{" +
+                "unitName='" + unitName + '\'' +
+                ", multiplicationFactor=" + multiplicationFactor +
+                '}';
+    }
+
+    public String toJson() {
         return "{" +
                 "\"unit_name\":\"" + unitName + '\"' +
                 ", \"multiplication_factor\":\"" + getMultiplicationFactor() + "\"" +

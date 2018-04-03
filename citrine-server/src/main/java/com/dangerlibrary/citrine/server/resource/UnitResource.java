@@ -22,7 +22,7 @@ public class UnitResource {
             UnitLexer lexer = new UnitLexer(stream);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
             UnitParser parser = new UnitParser(tokens);
-            String payload = new SIUnitVisitor().visitInput(parser.input()).toString();
+            String payload = new SIUnitVisitor().visitInput(parser.input()).toJson();
             return Response
                     .ok(payload + '\n', MediaType.APPLICATION_JSON_TYPE)
                     .build();
