@@ -1,19 +1,19 @@
 package com.dangerlibrary.citrine.lib.model;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-import static com.dangerlibrary.citrine.lib.util.Constants.CALC_CONTEXT;
 import static com.dangerlibrary.citrine.lib.util.Constants.DISPLAY_CONTEXT;
 
 public class SIUnit {
     private final String unitName;
-    private final BigDecimal multiplicationFactor;
+    private final Double multiplicationFactor;
 
-    private SIUnit(String unitName, BigDecimal multiplicationFactor) {
+    private SIUnit(String unitName, Double multiplicationFactor) {
         this.unitName = unitName;
         this.multiplicationFactor = multiplicationFactor;
     }
@@ -22,12 +22,13 @@ public class SIUnit {
         return unitName;
     }
 
-    public BigDecimal getMultiplicationFactor() {
-        return multiplicationFactor.round(DISPLAY_CONTEXT);
+    public Double getMultiplicationFactor() {
+        return multiplicationFactor;
     }
 
-    public BigDecimal getExactFactor() {
-        return multiplicationFactor;
+    @VisibleForTesting
+    public BigDecimal getDisplayFactor() {
+        return new BigDecimal(multiplicationFactor, DISPLAY_CONTEXT);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class SIUnit {
     public String toJson() {
         return "{" +
                 "\"unit_name\":\"" + unitName + '\"' +
-                ", \"multiplication_factor\":\"" + getMultiplicationFactor() + "\"" +
+                ", \"multiplication_factor\":\"" + getDisplayFactor() + "\"" +
                 '}';
     }
 
@@ -65,19 +66,14 @@ public class SIUnit {
 
     public static class Builder {
         private String unitName;
-        private BigDecimal multiplicationFactor;
+        private Double multiplicationFactor;
 
         public Builder setUnitName(String unitName) {
             this.unitName = unitName;
             return this;
         }
 
-        public Builder setMultiplicationFactor(String factor) {
-            this.multiplicationFactor = new BigDecimal(factor, CALC_CONTEXT);
-            return this;
-        }
-
-        public Builder setMultiplicationFactor(BigDecimal factor) {
+        public Builder setMultiplicationFactor(Double factor) {
             this.multiplicationFactor = factor;
             return this;
         }

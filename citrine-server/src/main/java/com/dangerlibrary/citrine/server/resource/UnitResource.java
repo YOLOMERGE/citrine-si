@@ -1,4 +1,4 @@
-package com.dangerlibrary.citrine.lib.resource;
+package com.dangerlibrary.citrine.server.resource;
 
 
 import com.dangerlibrary.citrine.UnitLexer;

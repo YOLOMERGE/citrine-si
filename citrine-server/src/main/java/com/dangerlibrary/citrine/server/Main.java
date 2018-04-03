@@ -1,7 +1,7 @@
 package com.dangerlibrary.citrine.server;
 
-import com.dangerlibrary.citrine.lib.resource.UnitApplication;
-import org.eclipse.jetty.server.Server;
+import com.dangerlibrary.citrine.server.resource.UnitApplication;
+import org.eclipse.jetty.server.*;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher;

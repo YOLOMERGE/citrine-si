@@ -1,10 +1,11 @@
-package com.dangerlibrary.citrine.lib;
+package com.dangerlibrary.citrine.lib.util;
 
 import com.dangerlibrary.citrine.lib.model.SIUnit;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
+import static com.dangerlibrary.citrine.lib.util.Constants.DISPLAY_CONTEXT;
 import static com.dangerlibrary.citrine.lib.util.Functions.divide;
 import static com.dangerlibrary.citrine.lib.util.Functions.multiply;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -16,45 +17,45 @@ public class FunctionsTest {
     public void testMult() {
         SIUnit expected = SIUnit.newBuilder()
                 .setUnitName("foo*bar")
-                .setMultiplicationFactor("2.00000000000000") // 15 digits
+                .setMultiplicationFactor(2d) // 15 digits
                 .build();
         SIUnit left = SIUnit.newBuilder()
                 .setUnitName("foo")
-                .setMultiplicationFactor("1.00000000000000") // 15 digits
+                .setMultiplicationFactor(1d) // 15 digits
                 .build();
         SIUnit right = SIUnit.newBuilder()
                 .setUnitName("bar")
-                .setMultiplicationFactor("2")
+                .setMultiplicationFactor(2d)
                 .build();
         SIUnit result = multiply(left, right);
         assertEquals(expected, result);
-        assertEquals(new BigDecimal("2.0000000000000"), result.getMultiplicationFactor()); // round to 14 sig figs
+        assertEquals(new BigDecimal("2", DISPLAY_CONTEXT), result.getDisplayFactor()); // round to 14 sig figs
     }
 
     @Test
     public void testDiv() {
         SIUnit expected = SIUnit.newBuilder()
                 .setUnitName("foo/bar")
-                .setMultiplicationFactor("2.00000000000000") // 15 digits
+                .setMultiplicationFactor(2d) // 15 digits
                 .build();
         SIUnit left = SIUnit.newBuilder()
                 .setUnitName("foo")
-                .setMultiplicationFactor("4.00000000000000") // 15 digits
+                .setMultiplicationFactor(4d) // 15 digits
                 .build();
         SIUnit right = SIUnit.newBuilder()
                 .setUnitName("bar")
-                .setMultiplicationFactor("2")
+                .setMultiplicationFactor(2d)
                 .build();
         SIUnit result = divide(left, right);
         assertEquals(expected, result);
-        assertEquals(new BigDecimal("2.0000000000000"), result.getMultiplicationFactor()); // round to 14 sig figs
+        assertEquals(new BigDecimal("2", DISPLAY_CONTEXT), result.getDisplayFactor()); // round to 14 sig figs
     }
 
     @Test
     public void testMultNull() {
         SIUnit left = SIUnit.newBuilder()
                 .setUnitName("foo")
-                .setMultiplicationFactor("4")
+                .setMultiplicationFactor(4d)
                 .build();
         SIUnit right = null;
         assertThrows(IllegalArgumentException.class, () -> multiply(left, right));
@@ -64,7 +65,7 @@ public class FunctionsTest {
     public void testDivNull() {
         SIUnit left = SIUnit.newBuilder()
                 .setUnitName("foo")
-                .setMultiplicationFactor("4")
+                .setMultiplicationFactor(4d)
                 .build();
         SIUnit right = null;
         assertThrows(IllegalArgumentException.class, () -> divide(left, right));
@@ -74,11 +75,11 @@ public class FunctionsTest {
     public void testDivByZero() {
         SIUnit left = SIUnit.newBuilder()
                 .setUnitName("foo")
-                .setMultiplicationFactor("4")
+                .setMultiplicationFactor(4d)
                 .build();
         SIUnit right = SIUnit.newBuilder()
                 .setUnitName("bar")
-                .setMultiplicationFactor("0.0000")
+                .setMultiplicationFactor(0d)
                 .build();
         assertThrows(IllegalArgumentException.class, () -> divide(left, right));
     }
