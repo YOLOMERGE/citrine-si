@@ -73,6 +73,7 @@
                 </excludes>
               </filter>
             </filters>
+            <shadedArtifactAttached>true</shadedArtifactAttached>
           </configuration>
           <executions>
             <execution>
