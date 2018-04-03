@@ -6,7 +6,7 @@ import com.dangerlibrary.citrine.lib.model.SIUnit;
 import java.math.MathContext;
 import java.math.RoundingMode;
 
-import static java.lang.StrictMath.PI;
+import static java.lang.Math.PI;
 
 public class Constants {
     public static final MathContext DISPLAY_CONTEXT = new MathContext(14, RoundingMode.HALF_UP);
@@ -21,6 +21,8 @@ public class Constants {
             .put("minute", SIUnit.newBuilder().setUnitName("s").setMultiplicationFactor(60d).build())
             .put("hour", SIUnit.newBuilder().setUnitName("s").setMultiplicationFactor(3600d).build())
             .put("h", SIUnit.newBuilder().setUnitName("s").setMultiplicationFactor(3600d).build())
+            .put("day", SIUnit.newBuilder().setUnitName("s").setMultiplicationFactor(86400d).build())
+            .put("d", SIUnit.newBuilder().setUnitName("s").setMultiplicationFactor(86400d).build())
             .put("degree", SIUnit.newBuilder().setUnitName("rad").setMultiplicationFactor(DEGREES_TO_RADIANS).build())
             .put("°", SIUnit.newBuilder().setUnitName("rad").setMultiplicationFactor(DEGREES_TO_RADIANS).build())
             .put("'", SIUnit.newBuilder().setUnitName("rad").setMultiplicationFactor(ARCMINUTE).build())
